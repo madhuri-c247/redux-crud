@@ -1,0 +1,46 @@
+.delete-btn{
+    background-image: linear-gradient(rgba(255, 0, 0, 0.568), rgba(145, 22, 22, 0.541));
+  }
+
+  .delete-btn:hover{
+    background-image: linear-gradient( rgba(145, 22, 22, 0.541), rgba(255, 0, 0, 0.568));
+    color: bisque;
+  }
+  .edit-btn{
+    background-image: linear-gradient(rgba(0, 38, 255, 0.568), rgba(22, 34, 145, 0.568));
+  }
+  .edit-btn:hover{
+    background-image: linear-gradient( rgba(22, 34, 145, 0.568),rgba(0, 38, 255, 0.568));
+    color: bisque;
+  }
+
+  .data-txt{
+    color: rgb(5, 85, 5);
+    
+  }
+  .table-main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+  }
+  .table-main table{
+    margin-top: 10px;
+    width: 100%;
+  }
+  table td,th{
+    padding: 10px;
+    color: rgb(3, 71, 3); 
+  }
+  
+  .table-main button{
+    cursor: pointer;
+    border: none;
+    border-radius: 2px ;
+    padding: 5px 10px;
+    color: white;
+    box-shadow: 0px 3px 5px rgba(128, 128, 128, 0.678);
+  }
+
+
+ 
