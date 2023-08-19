@@ -1,30 +1,18 @@
 import React, { useEffect } from 'react';
-import axios from 'axios';
 import '../styles/home.css'
 import { useSelector } from 'react-redux/es/hooks/useSelector';
-import { Link, NavLink } from 'react-router-dom';
-import { deleteUser, editUser, fetchData } from '../services/reducers/userReducer';
+import { NavLink } from 'react-router-dom';
+import { deleteUser } from '../services/reducers/userReducer';
 import { useDispatch } from 'react-redux';
 
 const Home = () => {
 
     const Data = useSelector((state) => state.users)
     const dispatch = useDispatch()
-    // console.log(Data,'from-home')
 
-    useEffect(() => {
-       axios.get('https://fakestoreapi.com/products').then((res) => {
-            // dispatch(fetchData(res.data))
-        })
-        
-   }, [dispatch])
-
-   const handleDelete = (id)=>{
-        dispatch(deleteUser({id:id}))
-   }
-
-   
-
+    const handleDelete = (id) => {
+        dispatch(deleteUser({ id: id }))
+    }
     return (
 
         <div className='table-main'>
@@ -52,8 +40,7 @@ const Home = () => {
                                     Delete
                                 </button></td>
                                 <td><NavLink to={`/edit/${value.id}`}><button className='edit-btn'
-                                >
-                                  Edit
+                                > Edit
                                 </button></NavLink></td>
                             </tr>
                         </>

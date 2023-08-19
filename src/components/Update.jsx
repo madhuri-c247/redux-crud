@@ -8,26 +8,24 @@ const Update = () => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
 
-    const [Data, setData] = useState({
+    const [inputData, setData] = useState({
         id: '',
         price: '',
         category: '',
-        title: '',
-       
+        title: '',    
     })
 
     const handleChange = (e) => {
         const { name, value } = e.target
         setData({
-            ...Data,
+            ...inputData,
             [name]: value
-
         })
     }
 
   const handleSubmit = (e)=>{
     e.preventDefault();
-    dispatch(addUser(Data))
+    dispatch(addUser(inputData))
     navigate('/')
   }
 
@@ -38,28 +36,28 @@ const Update = () => {
             <input type="text"
                 placeholder='Enter ID'
                 name='id'
-                value={Data.id}
+                value={inputData.id}
                 onChange={handleChange} required/>
 
             <input
                 type="text"
                 placeholder='Enter Price'
                 name='price'
-                value={Data.price}
+                value={inputData.price}
                 onChange={handleChange} required/>
 
             <input
                 type="text"
                 placeholder='Enter Category'
                 name='category'
-                value={Data.category}
+                value={inputData.category}
                 onChange={handleChange} required/>
 
             <input
                 type="text"
                 placeholder='Enter Title'
                 name='title'
-                value={Data.title}
+                value={inputData.title}
                 onChange={handleChange} required/>
 
             <input

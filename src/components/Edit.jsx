@@ -9,25 +9,21 @@ const Edit = () => {
     const navigate = useNavigate()
     const {id} = useParams();
     const users = useSelector((state) => state.users)
-    
+    console.log(users,'tt')
     useEffect(()=>{
         const toEdit = users.filter((item)=> item.id == id)
 
         console.log(toEdit,'edit')
-        // console.log(id,'params-id')
-        // console.log(users,'users')
         setData({
             ...toEdit[0]
         })
-
     },[])
 
     const [Data, setData] = useState({
         id: '',
         price: '',
         category: '',
-        title: '',
-       
+        title: '',  
     })
 
     const handleChange = (e) => {
@@ -35,7 +31,6 @@ const Edit = () => {
         setData({
             ...Data,
             [name]: value
-
         })
     }
 
@@ -44,7 +39,7 @@ const Edit = () => {
      dispatch(editUser({id:id, Data:Data}))
     navigate('/')
   }
-
+  
     return (
         <div className='form-main-div'>
         <form className='update-form-main d-flexr' onSubmit={handleSubmit}>
